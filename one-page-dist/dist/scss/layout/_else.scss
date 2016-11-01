@@ -165,6 +165,7 @@ article.full-image {
   opacity: 0.9;
   position: relative;
   top: -60px;
+  z-index: 25;
 }
 
 .masthead-content {
@@ -260,10 +261,7 @@ p {
 }
 
 .three-col-grid-content {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  padding: 4em 1em;
+  @include center-content(8em 1em);
   color: #ffffff;
 }
 
@@ -273,10 +271,10 @@ p {
 #start {
   background-color: #ffffff;
   position: relative;
-  top: -8em;
-  z-index: -1;
+  top: -4em;
+  z-index: 0;
   margin: 0 15px;
-  padding-top: 0 15px;
+  padding-top: 15px;
 }
 
 .start {
@@ -292,11 +290,17 @@ p {
 }
 
 .start-content {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  padding: 2em 0;
+  @include center-content(4em 0);
 }
+#start:hover .box-grid {
+  position: relative;
+  left: 5.5%; 
+  transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  }
+
 
 /********Box Grid Section*********
 **********************************/
@@ -309,13 +313,17 @@ p {
   position: relative;
   left: 22%;
   overflow-y: hidden;
+    transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
 }
-.box-grid:hover{
+/*.box-grid:hover{
   left: 0;
   transition-property: all;
   transition-duration: .5s;
   transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-}
+}*/
 .box-grid-mobile {
   margin-top: 5%;
   margin-bottom: 5%;
@@ -393,9 +401,12 @@ div {
   left: 0;
   opacity: 0.9;
   color: #ffffff;
-  padding: 15%;
+  //padding: 15%;
   width: 100%;
   background-size: cover;
+}
+.box-content{
+  @include center-content(1em);
 }
 
 .one-by-one h3 {
@@ -435,10 +446,7 @@ div {
 }
 
 .four-widget-content {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  padding: 2em 0 0 0;
+  @include center-content(8em 0);
 }
 
 .hentry {
@@ -577,10 +585,7 @@ div {
 }
 
 .contact-content {
-  position: relative;
-  display: block;
-  vertical-align: middle;
-  padding: 3em 0;
+  @include center-content(8em 0);
   color: white;
 }
 

@@ -14,7 +14,7 @@
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+
 <script src="https://use.fontawesome.com/0dafd0516e.js"></script>
 
 <?php wp_head(); ?>
@@ -34,7 +34,18 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <a id="brand-name" class="navbar-brand page-scroll" href="#menu-primary"><em><?php bloginfo( 'name' ); ?></em></a>
+                <a id="brand-name" class="navbar-brand page-scroll" href="#menu-primary"><?php
+                // check to see if the logo exists and add it to the page
+                if ( get_theme_mod( 'your_theme_logo' ) ) : ?>
+
+                <img src="<?php echo get_theme_mod( 'your_theme_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" >
+
+                <?php // add a fallback if the logo doesn't exist
+                else : ?>
+
+                <em><?php bloginfo( 'name' ); ?></em>
+
+                <?php endif; ?></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->

@@ -1,0 +1,6 @@
+  @mixin center-content($padding){
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  padding: $padding;
+}

@@ -12,7 +12,8 @@
 <?php
 $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 5600,1000 ), false, '' );
 ?>
-<article id="<?php echo $post->post_name; ?>" <?php post_class('page-scroll full-image'); ?> style="background: url(<?php echo $src[0]; ?>)">
+<article id="<?php $categories=get_the_category();
+	echo $cat_name = $categories[0]->slug; ?>" <?php post_class('page-scroll full-image'); ?> style="background: url(<?php echo $src[0]; ?>)">
 <div class="container">
 	<div class="row">
 		<div class="full-image-content hide-content col-xs-12 col-lg-6 push-left">

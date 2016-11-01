@@ -8,7 +8,8 @@
 <?php
 global $post;
 ;?>
-<article id="<?php echo $post->post_name; ?>" <?php post_class('page-scroll'); ?>>
+<article id="<?php $categories=get_the_category();
+	echo $cat_name = $categories[0]->slug; ?>" <?php post_class('page-scroll'); ?>>
 	<div class="container">
 		<div class="three-col-grid-content">
 		<div class="row">
@@ -32,7 +33,7 @@ global $post;
 			<div class="row">
 
 				<!--Widget One-->
-				<div class="col-sm-12 col-md-4 three-col-widget">
+				<div class="col-sm-12 col-md-4">
 				<?php dynamic_sidebar( 'web-based') ?>	
 				</div>
 

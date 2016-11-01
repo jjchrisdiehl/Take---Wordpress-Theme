@@ -17,7 +17,8 @@ get_header(); ?>
 				$args = array(
 					'post_type' => 'page',
 					'order' => 'ASC',
-					'category_name' => 'front-page'
+					'orderby' => 'menu_order',
+					'category_name' => 'masthead, start, full-image, three-col-grid, subscribe-options, contact'
 					);
 				$the_query = new WP_Query($args);
 
@@ -30,10 +31,11 @@ get_header(); ?>
 
 				<?php 
 				global $post;
-				$slug=$post->post_name;
-				get_template_part('content', $slug);
+				$categories=get_the_category();
+				$cat_name = $categories[0]->slug;
+				get_template_part('content', $cat_name);
 
-			//	var_dump($slug);
+				//var_dump($cat_name);
 				?>
 
 			<?php endwhile; ?>
@@ -43,5 +45,6 @@ get_header(); ?>
 	</div>
 </main><!-- #main -->
 </div><!-- #primary -->
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js" async></script>
 
 <?php get_footer(); ?>
