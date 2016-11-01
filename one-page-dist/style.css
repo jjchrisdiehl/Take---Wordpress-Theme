@@ -88,10 +88,15 @@ html {
     background-size: contain; }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: arial, sans-serif;
   font-weight: 300;
   background: #fff;
   padding-top: 0px !important; }
+
+/* fonts now loaded */
+.wf-active body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 130%; }
 
 article, aside, details, figcaption, figure, footer, header, main, nav, section {
   display: block; }
@@ -769,7 +774,8 @@ article.full-image {
   background-repeat: no-repeat !important;
   opacity: 0.9;
   position: relative;
-  top: -60px; }
+  top: -60px;
+  z-index: 25; }
 
 .masthead-content {
   color: white;
@@ -851,7 +857,7 @@ p {
   position: relative;
   display: inline-block;
   vertical-align: middle;
-  padding: 4em 1em;
+  padding: 8em 1em;
   color: #ffffff; }
 
 /*******Get Started Section*******
@@ -859,10 +865,10 @@ p {
 #start {
   background-color: #ffffff;
   position: relative;
-  top: -8em;
-  z-index: -1;
+  top: -4em;
+  z-index: 0;
   margin: 0 15px;
-  padding-top: 0 15px; }
+  padding-top: 15px; }
 
 .start {
   text-align: left; }
@@ -878,7 +884,15 @@ p {
   position: relative;
   display: inline-block;
   vertical-align: middle;
-  padding: 2em 0; }
+  padding: 4em 0; }
+
+#start:hover .box-grid {
+  position: relative;
+  left: 5.5%;
+  transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out; }
 
 /********Box Grid Section*********
 **********************************/
@@ -889,14 +903,18 @@ p {
   margin-right: auto;
   position: relative;
   left: 22%;
-  overflow-y: hidden; }
+  overflow-y: hidden;
+  transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out; }
 
-.box-grid:hover {
+/*.box-grid:hover{
   left: 0;
   transition-property: all;
   transition-duration: .5s;
-  transition-timing-function: cubic-bezier(0, 1, 0.5, 1); }
-
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}*/
 .box-grid-mobile {
   margin-top: 5%;
   margin-bottom: 5%;
@@ -963,9 +981,14 @@ div.container-fluid.box-grid > div:nth-child(2) > div:nth-child(3) > div, div.co
   left: 0;
   opacity: 0.9;
   color: #ffffff;
-  padding: 15%;
   width: 100%;
   background-size: cover; }
+
+.box-content {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 1em; }
 
 .one-by-one h3 {
   font-size: 18px; }
@@ -999,7 +1022,7 @@ div.container-fluid.box-grid > div:nth-child(2) > div:nth-child(3) > div, div.co
   position: relative;
   display: inline-block;
   vertical-align: middle;
-  padding: 2em 0 0 0; }
+  padding: 8em 0; }
 
 .hentry {
   margin: 0px; }
@@ -1116,9 +1139,9 @@ div.container-fluid.box-grid > div:nth-child(2) > div:nth-child(3) > div, div.co
 
 .contact-content {
   position: relative;
-  display: block;
+  display: inline-block;
   vertical-align: middle;
-  padding: 3em 0;
+  padding: 8em 0;
   color: white; }
 
 #text-6 {

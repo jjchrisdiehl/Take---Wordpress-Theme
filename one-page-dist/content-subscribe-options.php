@@ -8,7 +8,8 @@
 <?php
 global $post;
 ;?>
-<article id="<?php echo $post->post_name; ?>" <?php post_class('page-scroll'); ?>>
+<article id="<?php $categories=get_the_category();
+	echo $cat_name = $categories[0]->slug; ?>" <?php post_class('page-scroll'); ?>>
 	<div class="container">
 		<div class="subscribe">
 			<div class="row">

@@ -6,9 +6,10 @@
  */
 ?>
 <?php
-global $post;
-;?>
-<article id="<?php echo $post->post_name; ?>" <?php post_class('page-scroll'); ?>>
+	global $post;
+?>
+<article id="<?php $categories=get_the_category();
+	echo $cat_name = $categories[0]->slug; ?>" <?php post_class('page-scroll'); ?>>
 	<div class="start">
 		<div class="container">	
 			<div class="row">
@@ -37,21 +38,25 @@ global $post;
 			<div class="row">
 				<div class="grid-box-wrap">	
 					<div class="box col-sm-12 col-md-3">
+						<div class="box-content">
 						<?php query_posts('p=65'); ?>
 						<?php while (have_posts()) : the_post(); ?>
 							<h3><?php the_title(); ?></h3>
 							<?php the_content(); ?>
 						<?php endwhile;?>
+						</div>
 					</div>
 				</div>
 
 				<div class="grid-box-wrap">
 					<div class="box col-sm-12 col-md-3">
+						<div class="box-content">
 						<?php query_posts('p=67'); ?>
 						<?php while (have_posts()) : the_post(); ?>
 							<h3><?php the_title(); ?></h3>
 							<?php the_content(); ?>
 						<?php endwhile;?>
+						</div>
 					</div>
 				</div>
 
@@ -68,20 +73,24 @@ global $post;
 					}?>
 					<!--The post with background, header, and content-->
 					<div style="background-image: url('<?php echo $thumbnail; ?>');" class="box col-sm-12 col-md-3">
+					<div class="box-content">
 						<h3><?php the_title(); ?></h3>
 						<?php the_content(); ?>
 
 					<?php endwhile; wp_reset_postdata();?>
 					</div>
+					</div>
 				</div>
 					
 				<div class="grid-box-wrap">
 					<div class="box col-sm-12 col-md-3">
+						<div class="box-content">
 						<?php query_posts('p=71'); ?>
 						<?php while (have_posts()) : the_post(); ?>
 							<h3><?php the_title(); ?></h3>
 							<?php the_content(); ?>
 						<?php endwhile;?>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -100,19 +109,23 @@ global $post;
 					}?>
 					<!--The post with background, header, and content-->
 					<div style="background-image: url('<?php echo $thumbnail; ?>');" class="box col-sm-12 col-md-6">
+							<div class="box-content">
 							<h3><?php the_title(); ?></h3>
 							<?php the_content(); ?>
 						<?php endwhile;?>
+						</div>
 					</div>
 				</div>	
 
 				<div class="grid-box-wrap">
 					<div class="box col-sm-12 col-md-3">
+						<div class="box-content">
 						<?php query_posts('p=75'); ?>
 						<?php while (have_posts()) : the_post(); ?>
 							<h3><?php the_title(); ?></h3>
 							<?php the_content(); ?>
 						<?php endwhile;?>
+						</div>
 					</div>
 				</div>
 
@@ -129,9 +142,11 @@ global $post;
 					}?>
 					<!--The post with background, header, and content-->
 					<div style="background-image: url('<?php echo $thumbnail; ?>');" class="box col-sm-12 col-md-6">
+							<div class="box-content">
 							<h3><?php the_title(); ?></h3>
 							<?php the_content(); ?>
 						<?php endwhile;?>
+						</div>
 					</div>				
 				</div>							
 			</div><!--End portfolio grid-->

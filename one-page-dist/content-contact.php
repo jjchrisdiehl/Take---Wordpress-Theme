@@ -1,7 +1,8 @@
 <?php
 global $post;
 ;?>
-<article id="<?php echo $post->post_name; ?>" <?php post_class('page-scroll'); ?>>
+<article id="<?php $categories=get_the_category();
+	echo $cat_name = $categories[0]->slug; ?>" <?php post_class('page-scroll'); ?>>
 	<div class="container contact">
 		<div class="row">
 			<div class="contact-content">
@@ -13,13 +14,13 @@ global $post;
 						'after'  => '</div>',
 						) );
 						?>
-						<div class="col-xs-12 col-sm-4">
+						<div class="col-xs-4 col-sm-4">
 							<p><?php dynamic_sidebar( 'home-contact-one') ?></p>
 						</div>
-						<div class="col-xs-12 col-sm-4">
+						<div class="col-xs-4 col-sm-4">
 							<p><?php dynamic_sidebar( 'home-contact-two') ?></p>
 						</div>
-						<div class="col-xs-12 col-sm-4">
+						<div class="col-xs-4 col-sm-4">
 							<p><?php dynamic_sidebar( 'home-contact-three') ?></p>
 						</div>		
 					</div><!--end column one-->

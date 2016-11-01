@@ -47,12 +47,16 @@ html {
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: arial, sans-serif;
   font-weight: 300;
   background: #fff;
   padding-top: 0px !important;
 }
-
+/* fonts now loaded */
+.wf-active body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 130%;
+}
 article, aside, details, figcaption, figure, footer, header, main, nav, section {
   display: block;
 }
