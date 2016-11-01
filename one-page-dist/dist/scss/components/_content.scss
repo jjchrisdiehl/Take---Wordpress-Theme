@@ -1,0 +1,188 @@
+/*--------------------------------------------------------------
+6.0 Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers */
+
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  &:hover, &:active, &:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+    /* Above WP toolbar */
+  }
+}
+
+/*--------------------------------------------------------------
+7.0 Alignments
+--------------------------------------------------------------*/
+
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em;
+}
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em;
+}
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin: 0 auto;
+}
+
+/*--------------------------------------------------------------
+8.0 Clearings
+--------------------------------------------------------------*/
+
+.clear {
+  &:before, &:after {
+    content: '';
+    display: table;
+  }
+}
+
+.entry-content {
+  &:before, &:after {
+    content: '';
+    display: table;
+  }
+}
+
+.comment-content {
+  &:before, &:after {
+    content: '';
+    display: table;
+  }
+}
+
+.site-header {
+  &:before, &:after {
+    content: '';
+    display: table;
+  }
+}
+
+.site-content {
+  &:before, &:after {
+    content: '';
+    display: table;
+  }
+}
+
+.site-footer {
+  &:before, &:after {
+    content: '';
+    display: table;
+  }
+}
+
+.clear:after, .entry-content:after, .comment-content:after, .site-header:after, .site-content:after, .site-footer:after {
+  clear: both;
+}
+
+/*--------------------------------------------------------------
+9.0 Widgets
+--------------------------------------------------------------*/
+
+.widget {
+  margin: 0 0 1.5em;
+  select {
+    max-width: 100%;
+  }
+}
+
+/* Make sure select elements fit in widgets */
+
+/* Search widget */
+
+.widget_search .search-submit {
+  display: none;
+}
+
+/*--------------------------------------------------------------
+10.0 Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+10.1 Posts and pages
+--------------------------------------------------------------*/
+
+.sticky {}
+
+.hentry {
+  margin: 0 0 1.5em;
+}
+
+.byline, .updated {
+  display: none;
+}
+
+.single .byline, .group-blog .byline {
+  display: inline;
+}
+
+.page-content, .entry-content, .entry-summary {
+  margin: 1.5em 0 0;
+}
+
+.page-links {
+  clear: both;
+  margin: 0 0 1.5em;
+}
+
+/*--------------------------------------------------------------
+10.2 Asides
+--------------------------------------------------------------*/
+
+.blog .format-aside .entry-title, .archive .format-aside .entry-title {
+  display: none;
+}
+
+/*--------------------------------------------------------------
+10.3 Comments
+--------------------------------------------------------------*/
+
+.comment-content a {
+  word-wrap: break-word;
+}
+
+.bypostauthor {}
+
+/*--------------------------------------------------------------
+11.0 Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+
+.infinite-scroll {
+  .paging-navigation, &.neverending .site-footer {
+    /* Theme Footer (when set to scrolling) */
+    display: none;
+  }
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
+
+.infinity-end.neverending .site-footer {
+  display: block;
+}
